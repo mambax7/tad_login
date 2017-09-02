@@ -1455,7 +1455,7 @@ class SFTP extends SSH2
             return true;
         }
 
-        $filename = $this->_realPath($filename);
+        $filename = $this->_realpath($filename);
         // rather than return what the permissions *should* be, we'll return what they actually are.  this will also
         // tell us if the file actually exists.
         // incidentally, SFTPv4+ adds an additional 32-bit integer field - flags - to the following:
