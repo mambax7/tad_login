@@ -24,14 +24,14 @@ $all_oidc = [
         'gzipenable' => false,
         'from' => '基隆市',
     ],
-    'tp_oidc' => [
-        'tail' => 'tp',
-        'provideruri' => 'https://tp.sso.edu.tw',
-        'eduinfoep' => 'https://tp.sso.edu.tw/cncresource/api/v1/eduinfo',
-        'scope' => ['educloudroles', 'openid', 'profile', 'eduinfo', 'openid2', 'email'],
-        'gzipenable' => false,
-        'from' => '臺北市',
-    ],
+    // 'tp_oidc' => [
+    //     'tail' => 'tp',
+    //     'provideruri' => 'https://tp.sso.edu.tw',
+    //     'eduinfoep' => 'https://tp.sso.edu.tw/cncresource/api/v1/eduinfo',
+    //     'scope' => ['educloudroles', 'openid', 'profile', 'eduinfo', 'openid2', 'email'],
+    //     'gzipenable' => false,
+    //     'from' => '臺北市',
+    // ],
     'ntpc_oidc' => [
         'tail' => 'ntpc',
         'provideruri' => 'https://ntpc.sso.edu.tw',
@@ -122,10 +122,11 @@ $all_oidc = [
     // ],
     'kh_oidc' => [
         'tail' => 'kh',
-        'provideruri' => 'https://kh.sso.edu.tw',
-        'eduinfoep' => 'https://kh.sso.edu.tw/cncresource/api/v1/eduinfo',
-        'scope' => ['educloudroles', 'openid', 'profile', 'eduinfo', 'openid2', 'email'],
         'gzipenable' => false,
+        'scope' => ['openid', 'profile', 'email', 'kh_profile', 'kh_titles'],
+        'providerparams' => ['token_endpoint_auth_methods_supported' => ["client_secret_post"]],
+        'ignore_userinfo' => true,
+        'provideruri' => 'https://oidc.kh.edu.tw',
         'from' => '高雄市',
     ],
     'ptc_oidc' => [
@@ -178,9 +179,12 @@ $all_oidc = [
     ],
 ];
 $oidc_array = array_keys($all_oidc);
-$all_oidc2 = [
-    'tp_ldap' => [
-        'tail' => 'tp',
-    ],
-];
-$oidc_array2 = array_keys($all_oidc2);
+
+if (in_array('tp_ldap', $xoopsModuleConfig['auth_method'])) {
+    $all_oidc2 = [
+        'tp_ldap' => [
+            'tail' => 'tp',
+        ],
+    ];
+    $oidc_array2 = array_keys($all_oidc2);
+}
