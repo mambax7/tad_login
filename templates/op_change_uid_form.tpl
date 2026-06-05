@@ -12,7 +12,7 @@
         <div class="input-group-prepend input-group-addon">
             <span class="input-group-text"><{$smarty.const._MA_TADLOGIN_REAL_NAME_SEARCH}></span>
         </div>
-        <input type="text" name="keyword" class="form-control" value="<{$keyword}>" placeholder="<{$smarty.const._MA_TADLOGIN_KEYWORD_REAL_NAME}>">
+        <input type="text" name="keyword" class="form-control" value="<{$keyword|default:''}>" placeholder="<{$smarty.const._MA_TADLOGIN_KEYWORD_REAL_NAME}>">
         <div class="input-group-append input-group-btn">
             <button type="submit" class="btn btn-primary"><{$smarty.const._TAD_SEARCH}></button>
         </div>
@@ -49,7 +49,7 @@
     </table>
     <div class="bar">
         <input type="hidden" name="op" value="change_uid">
-        <button type="submit" class="btn btn-primary"><{$smarty.const._TAD_SUBMIT}></button>
+        <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-disk" aria-hidden="true"></i>  <{$smarty.const._TAD_SUBMIT}></button>
     </div>
 </form>
-<{$bar}>
+<{$bar|default:''}>
