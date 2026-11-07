@@ -7,29 +7,29 @@ use XoopsModules\Tadtools\Utility;
 class Tools
 {
     public static $all_oidc = [
-        'edu_oidc' => [
-            'tail' => 'edu',
+        'edu_oidc'  => [
+            'tail'        => 'edu',
             'provideruri' => 'https://oidc.tanet.edu.tw',
-            'eduinfoep' => 'https://oidc.tanet.edu.tw/moeresource/api/v1/oidc/eduinfo',
-            'scope' => ['openid', 'email', 'profile', 'openid2'],
-            'gzipenable' => true,
-            'from' => '',
+            'eduinfoep'   => 'https://oidc.tanet.edu.tw/moeresource/api/v1/oidc/eduinfo',
+            'scope'       => ['openid', 'email', 'profile', 'openid2'],
+            'gzipenable'  => true,
+            'from'        => '',
         ],
-        'moe_oidc' => [
-            'tail' => 'moe',
+        'moe_oidc'  => [
+            'tail'        => 'moe',
             'provideruri' => 'https://moe.sso.edu.tw',
-            'eduinfoep' => 'https://moe.sso.edu.tw/cncresource/api/v1/eduinfo',
-            'scope' => ['educloudroles', 'openid', 'profile', 'eduinfo', 'openid2', 'email'],
-            'gzipenable' => false,
-            'from' => '',
+            'eduinfoep'   => 'https://moe.sso.edu.tw/cncresource/api/v1/eduinfo',
+            'scope'       => ['educloudroles', 'openid', 'profile', 'eduinfo', 'openid2', 'email'],
+            'gzipenable'  => false,
+            'from'        => '',
         ],
-        'kl_oidc' => [
-            'tail' => 'kl',
+        'kl_oidc'   => [
+            'tail'        => 'kl',
             'provideruri' => 'https://kl.sso.edu.tw',
-            'eduinfoep' => 'https://kl.sso.edu.tw/cncresource/api/v1/eduinfo',
-            'scope' => ['educloudroles', 'openid', 'profile', 'eduinfo', 'openid2', 'email'],
-            'gzipenable' => false,
-            'from' => '基隆市',
+            'eduinfoep'   => 'https://kl.sso.edu.tw/cncresource/api/v1/eduinfo',
+            'scope'       => ['educloudroles', 'openid', 'profile', 'eduinfo', 'openid2', 'email'],
+            'gzipenable'  => false,
+            'from'        => '基隆市',
         ],
         // 'tp_oidc' => [
         //     'tail' => 'tp',
@@ -40,149 +40,149 @@ class Tools
         //     'from' => '臺北市',
         // ],
         'ntpc_oidc' => [
-            'tail' => 'ntpc',
+            'tail'        => 'ntpc',
             'provideruri' => 'https://ntpc.sso.edu.tw',
-            'eduinfoep' => 'https://ntpc.sso.edu.tw/cncresource/api/v1/eduinfo',
-            'scope' => ['educloudroles', 'openid', 'profile', 'eduinfo', 'openid2', 'email'],
-            'gzipenable' => false,
-            'from' => '新北市',
+            'eduinfoep'   => 'https://ntpc.sso.edu.tw/cncresource/api/v1/eduinfo',
+            'scope'       => ['educloudroles', 'openid', 'profile', 'eduinfo', 'openid2', 'email'],
+            'gzipenable'  => false,
+            'from'        => '新北市',
         ],
-        'ty_oidc' => [
-            'tail' => 'ty',
+        'ty_oidc'   => [
+            'tail'        => 'ty',
             'provideruri' => 'https://tyc.sso.edu.tw',
-            'eduinfoep' => 'https://tyc.sso.edu.tw/cncresource/api/v1/eduinfo',
-            'scope' => ['openid', 'openid2', 'email', 'profile', 'eduinfo'],
-            'gzipenable' => false,
-            'from' => '桃園市',
+            'eduinfoep'   => 'https://tyc.sso.edu.tw/cncresource/api/v1/eduinfo',
+            'scope'       => ['openid', 'openid2', 'email', 'profile', 'eduinfo'],
+            'gzipenable'  => false,
+            'from'        => '桃園市',
         ],
-        'hc_oidc' => [
-            'tail' => 'hc',
+        'hc_oidc'   => [
+            'tail'        => 'hc',
             'provideruri' => 'https://hc.sso.edu.tw',
-            'eduinfoep' => 'https://hc.sso.edu.tw/cncresource/api/v1/eduinfo',
-            'scope' => ['educloudroles', 'openid', 'profile', 'eduinfo', 'openid2', 'email'],
-            'gzipenable' => false,
-            'from' => '新竹市',
+            'eduinfoep'   => 'https://hc.sso.edu.tw/cncresource/api/v1/eduinfo',
+            'scope'       => ['educloudroles', 'openid', 'profile', 'eduinfo', 'openid2', 'email'],
+            'gzipenable'  => false,
+            'from'        => '新竹市',
         ],
-        'hcc_oidc' => [
-            'tail' => 'hcc',
+        'hcc_oidc'  => [
+            'tail'        => 'hcc',
             'provideruri' => 'https://hcc.sso.edu.tw',
-            'eduinfoep' => 'https://hcc.sso.edu.tw/cncresource/api/v1/eduinfo',
-            'scope' => ['educloudroles', 'openid', 'profile', 'eduinfo', 'openid2', 'email'],
-            'gzipenable' => false,
-            'from' => '新竹縣',
+            'eduinfoep'   => 'https://hcc.sso.edu.tw/cncresource/api/v1/eduinfo',
+            'scope'       => ['educloudroles', 'openid', 'profile', 'eduinfo', 'openid2', 'email'],
+            'gzipenable'  => false,
+            'from'        => '新竹縣',
         ],
-        'mlc_oidc' => [
-            'tail' => 'mlc',
+        'mlc_oidc'  => [
+            'tail'        => 'mlc',
             'provideruri' => 'https://mlc.sso.edu.tw',
-            'eduinfoep' => 'https://mlc.sso.edu.tw/cncresource/api/v1/eduinfo',
-            'scope' => ['educloudroles', 'openid', 'profile', 'eduinfo', 'openid2', 'email'],
-            'gzipenable' => false,
-            'from' => '苗栗縣',
+            'eduinfoep'   => 'https://mlc.sso.edu.tw/cncresource/api/v1/eduinfo',
+            'scope'       => ['educloudroles', 'openid', 'profile', 'eduinfo', 'openid2', 'email'],
+            'gzipenable'  => false,
+            'from'        => '苗栗縣',
         ],
-        'tc_oidc' => [
-            'tail' => 'tc',
+        'tc_oidc'   => [
+            'tail'        => 'tc',
             'provideruri' => 'https://tc.sso.edu.tw',
-            'eduinfoep' => 'https://tc.sso.edu.tw/cncresource/api/v1/eduinfo',
-            'scope' => ['educloudroles', 'openid', 'profile', 'eduinfo', 'openid2', 'email'],
-            'gzipenable' => false,
-            'from' => '臺中市',
+            'eduinfoep'   => 'https://tc.sso.edu.tw/cncresource/api/v1/eduinfo',
+            'scope'       => ['educloudroles', 'openid', 'profile', 'eduinfo', 'openid2', 'email'],
+            'gzipenable'  => false,
+            'from'        => '臺中市',
         ],
-        'chc_oidc' => [
-            'tail' => 'chc',
+        'chc_oidc'  => [
+            'tail'        => 'chc',
             'provideruri' => 'https://chc.sso.edu.tw',
-            'eduinfoep' => 'https://chc.sso.edu.tw/cncresource/api/v1/eduinfo',
-            'scope' => ['educloudroles', 'openid', 'profile', 'eduinfo', 'openid2', 'email'],
-            'gzipenable' => false,
-            'from' => '彰化縣',
+            'eduinfoep'   => 'https://chc.sso.edu.tw/cncresource/api/v1/eduinfo',
+            'scope'       => ['educloudroles', 'openid', 'profile', 'eduinfo', 'openid2', 'email'],
+            'gzipenable'  => false,
+            'from'        => '彰化縣',
         ],
         'ntct_oidc' => [
-            'tail' => 'ntct',
+            'tail'        => 'ntct',
             'provideruri' => 'https://ntct.sso.edu.tw',
-            'eduinfoep' => 'https://ntct.sso.edu.tw/cncresource/api/v1/eduinfo',
-            'scope' => ['educloudroles', 'openid', 'profile', 'eduinfo', 'openid2', 'email'],
-            'gzipenable' => false,
-            'from' => '南投縣',
+            'eduinfoep'   => 'https://ntct.sso.edu.tw/cncresource/api/v1/eduinfo',
+            'scope'       => ['educloudroles', 'openid', 'profile', 'eduinfo', 'openid2', 'email'],
+            'gzipenable'  => false,
+            'from'        => '南投縣',
         ],
-        'ylc_oidc' => [
-            'tail' => 'ylc',
+        'ylc_oidc'  => [
+            'tail'        => 'ylc',
             'provideruri' => 'https://ylc.sso.edu.tw',
-            'eduinfoep' => 'https://ylc.sso.edu.tw/cncresource/api/v1/eduinfo',
-            'scope' => ['openid', 'profile', 'eduinfo', 'email'],
-            'gzipenable' => false,
-            'from' => '雲林縣',
+            'eduinfoep'   => 'https://ylc.sso.edu.tw/cncresource/api/v1/eduinfo',
+            'scope'       => ['openid', 'profile', 'eduinfo', 'email'],
+            'gzipenable'  => false,
+            'from'        => '雲林縣',
         ],
-        'cyc_oidc' => [
-            'tail' => 'cyc',
+        'cyc_oidc'  => [
+            'tail'        => 'cyc',
             'provideruri' => 'https://cyc.sso.edu.tw',
-            'eduinfoep' => 'https://cyc.sso.edu.tw/cncresource/api/v1/eduinfo',
-            'scope' => ['educloudroles', 'openid', 'profile', 'eduinfo', 'openid2', 'email'],
-            'gzipenable' => false,
-            'from' => '嘉義縣',
+            'eduinfoep'   => 'https://cyc.sso.edu.tw/cncresource/api/v1/eduinfo',
+            'scope'       => ['educloudroles', 'openid', 'profile', 'eduinfo', 'openid2', 'email'],
+            'gzipenable'  => false,
+            'from'        => '嘉義縣',
         ],
-        // 'cy_oidc' => [
-        //     'tail' => 'cy',
-        //     'provideruri' => 'https://cy.sso.edu.tw',
-        //     'eduinfoep' => 'https://cy.sso.edu.tw/cncresource/api/v1/eduinfo',
-        //     'scope' => ['educloudroles', 'openid', 'profile', 'eduinfo', 'openid2', 'email'],
-        //     'gzipenable' => false,
-        //     'from'=>'嘉義市',
-        // ],
-        'kh_oidc' => [
-            'tail' => 'kh',
-            'gzipenable' => false,
-            'scope' => ['openid', 'profile', 'email', 'kh_profile', 'kh_titles'],
-            'providerparams' => ['token_endpoint_auth_methods_supported' => ["client_secret_post"]],
+        'cy_oidc'   => [
+            'tail'        => 'cy',
+            'provideruri' => 'https://cy.sso.edu.tw',
+            'eduinfoep'   => 'https://cy.sso.edu.tw/cncresource/api/v1/eduinfo',
+            'scope'       => ['educloudroles', 'openid', 'profile', 'eduinfo', 'openid2', 'email'],
+            'gzipenable'  => false,
+            'from'        => '嘉義市',
+        ],
+        'kh_oidc'   => [
+            'tail'            => 'kh',
+            'gzipenable'      => false,
+            'scope'           => ['openid', 'profile', 'email', 'kh_profile', 'kh_titles'],
+            'providerparams'  => ['token_endpoint_auth_methods_supported' => ["client_secret_post"]],
             'ignore_userinfo' => true,
-            'provideruri' => 'https://oidc.kh.edu.tw',
-            'from' => '高雄市',
+            'provideruri'     => 'https://oidc.kh.edu.tw',
+            'from'            => '高雄市',
         ],
-        'ptc_oidc' => [
-            'tail' => 'ptc',
+        'ptc_oidc'  => [
+            'tail'        => 'ptc',
             'provideruri' => 'https://ptc.sso.edu.tw',
-            'eduinfoep' => 'https://ptc.sso.edu.tw/cncresource/api/v1/eduinfo',
-            'scope' => ['educloudroles', 'openid', 'profile', 'eduinfo', 'openid2', 'email'],
-            'gzipenable' => false,
-            'from' => '屏東縣',
+            'eduinfoep'   => 'https://ptc.sso.edu.tw/cncresource/api/v1/eduinfo',
+            'scope'       => ['educloudroles', 'openid', 'profile', 'eduinfo', 'openid2', 'email'],
+            'gzipenable'  => false,
+            'from'        => '屏東縣',
         ],
-        'ilc_oidc' => [
-            'tail' => 'ilc',
+        'ilc_oidc'  => [
+            'tail'        => 'ilc',
             'provideruri' => 'https://ilc.sso.edu.tw',
-            'eduinfoep' => 'https://ilc.sso.edu.tw/cncresource/api/v1/eduinfo',
-            'scope' => ['educloudroles', 'openid', 'profile', 'eduinfo', 'openid2', 'email'],
-            'gzipenable' => false,
-            'from' => '宜蘭縣',
+            'eduinfoep'   => 'https://ilc.sso.edu.tw/cncresource/api/v1/eduinfo',
+            'scope'       => ['educloudroles', 'openid', 'profile', 'eduinfo', 'openid2', 'email'],
+            'gzipenable'  => false,
+            'from'        => '宜蘭縣',
         ],
-        'hlc_oidc' => [
-            'tail' => 'hlc',
+        'hlc_oidc'  => [
+            'tail'        => 'hlc',
             'provideruri' => 'https://hlc.sso.edu.tw',
-            'eduinfoep' => 'https://hlc.sso.edu.tw/cncresource/api/v1/eduinfo',
-            'scope' => ['educloudroles', 'openid', 'profile', 'eduinfo', 'openid2', 'email'],
-            'gzipenable' => false,
-            'from' => '花蓮縣',
+            'eduinfoep'   => 'https://hlc.sso.edu.tw/cncresource/api/v1/eduinfo',
+            'scope'       => ['educloudroles', 'openid', 'profile', 'eduinfo', 'openid2', 'email'],
+            'gzipenable'  => false,
+            'from'        => '花蓮縣',
         ],
         'ttct_oidc' => [
-            'tail' => 'ttct',
+            'tail'        => 'ttct',
             'provideruri' => 'https://ttct.sso.edu.tw',
-            'eduinfoep' => 'https://ttct.sso.edu.tw/cncresource/api/v1/eduinfo',
-            'scope' => ['educloudroles', 'openid', 'profile', 'eduinfo', 'openid2', 'email'],
-            'gzipenable' => false,
-            'from' => '臺東縣',
+            'eduinfoep'   => 'https://ttct.sso.edu.tw/cncresource/api/v1/eduinfo',
+            'scope'       => ['educloudroles', 'openid', 'profile', 'eduinfo', 'openid2', 'email'],
+            'gzipenable'  => false,
+            'from'        => '臺東縣',
         ],
-        'phc_oidc' => [
-            'tail' => 'phc',
+        'phc_oidc'  => [
+            'tail'        => 'phc',
             'provideruri' => 'https://phc.sso.edu.tw',
-            'eduinfoep' => 'https://phc.sso.edu.tw/cncresource/api/v1/eduinfo',
-            'scope' => ['educloudroles', 'openid', 'profile', 'eduinfo', 'openid2', 'email'],
-            'gzipenable' => false,
-            'from' => '澎湖縣',
+            'eduinfoep'   => 'https://phc.sso.edu.tw/cncresource/api/v1/eduinfo',
+            'scope'       => ['educloudroles', 'openid', 'profile', 'eduinfo', 'openid2', 'email'],
+            'gzipenable'  => false,
+            'from'        => '澎湖縣',
         ],
-        'mt_oidc' => [
-            'tail' => 'mt',
+        'mt_oidc'   => [
+            'tail'        => 'mt',
             'provideruri' => 'https://matsu.sso.edu.tw',
-            'eduinfoep' => 'https://matsu.sso.edu.tw/cncresource/api/v1/eduinfo',
-            'scope' => ['educloudroles', 'openid', 'profile', 'eduinfo', 'openid2', 'email'],
-            'gzipenable' => false,
-            'from' => '連江縣',
+            'eduinfoep'   => 'https://matsu.sso.edu.tw/cncresource/api/v1/eduinfo',
+            'scope'       => ['educloudroles', 'openid', 'profile', 'eduinfo', 'openid2', 'email'],
+            'gzipenable'  => false,
+            'from'        => '連江縣',
         ],
     ];
 
@@ -192,6 +192,44 @@ class Tools
         ],
     ];
 
+    public static function is_local_redirect($url)
+    {
+        if (!is_string($url) || '' === $url || preg_match('/[\x00-\x20\x7f\\\\]/', $url)) {
+            return false;
+        }
+
+        $target = parse_url($url);
+        $base = parse_url(XOOPS_URL);
+        if (false === $target || false === $base) {
+            return false;
+        }
+
+        if (!isset($target['scheme']) && !isset($target['host'])) {
+            return isset($target['path'])
+                && 0 === strpos($target['path'], '/')
+                && 0 !== strpos($target['path'], '//');
+        }
+
+        if (!isset($target['scheme'], $target['host'], $base['scheme'], $base['host'])
+            || isset($target['user'])
+            || isset($target['pass'])) {
+            return false;
+        }
+
+        $scheme = strtolower($target['scheme']);
+        if (!in_array($scheme, ['http', 'https'], true)
+            || $scheme !== strtolower($base['scheme'])
+            || strtolower($target['host']) !== strtolower($base['host'])) {
+            return false;
+        }
+
+        $targetPort = isset($target['port']) ? $target['port'] : ('https' === $scheme ? 443 : 80);
+        $baseScheme = strtolower($base['scheme']);
+        $basePort = isset($base['port']) ? $base['port'] : ('https' === $baseScheme ? 443 : 80);
+
+        return $targetPort === $basePort;
+    }
+
     public static function change_pass($newpass, $uname = '', $redirect_header = true)
     {
         global $xoopsUser, $xoopsDB;
@@ -199,12 +237,12 @@ class Tools
             $uname = $xoopsUser->uname();
         }
         if ($uname) {
-            $pass = self::authcode($newpass, 'ENCODE', $uname, 0);
+            $pass = self::encryptStoredPassword($newpass);
 
-            $sql = 'UPDATE `' . $xoopsDB->prefix('users') . "` SET `pass` = MD5('$newpass') WHERE `uname`='$uname' ";
+            $sql = 'UPDATE `' . $xoopsDB->prefix('users') . '` SET `pass` = MD5(' . $xoopsDB->quote($newpass) . ') WHERE `uname`=' . $xoopsDB->quote($uname);
             $xoopsDB->queryF($sql) or Utility::web_error($sql, __FILE__, __LINE__);
 
-            $sql = 'UPDATE `' . $xoopsDB->prefix('tad_login_random_pass') . "` SET `random_pass` = '$pass', `hashed_date`=NOW() WHERE `uname`='$uname' ";
+            $sql = 'UPDATE `' . $xoopsDB->prefix('tad_login_random_pass') . '` SET `random_pass` = ' . $xoopsDB->quote($pass) . ', `hashed_date`=NOW() WHERE `uname`=' . $xoopsDB->quote($uname);
             $xoopsDB->queryF($sql) or Utility::web_error($sql, __FILE__, __LINE__);
 
             if ($redirect_header) {
@@ -218,8 +256,8 @@ class Tools
         $header  = ["Authorization: Bearer $accesstoken"];
         $options = [
             'http' => [
-                'header' => $header,
-                'method' => 'GET',
+                'header'  => $header,
+                'method'  => 'GET',
                 'content' => '',
             ],
         ];
@@ -269,10 +307,10 @@ class Tools
             header('location:' . XOOPS_URL . '/user.php');
             exit;
         }
-        require_once XOOPS_ROOT_PATH . '/modules/tad_login/class/line/ConfigManager.php'; //Line 設定檔 管理器
+        require_once XOOPS_ROOT_PATH . '/modules/tad_login/class/line/ConfigManager.php';     //Line 設定檔 管理器
         require_once XOOPS_ROOT_PATH . '/modules/tad_login/class/line/LineAuthorization.php'; //產生登入網址
-        require_once XOOPS_ROOT_PATH . '/modules/tad_login/class/line/LineProfiles.php'; //取得用戶端 Profile
-        require_once XOOPS_ROOT_PATH . '/modules/tad_login/class/line/LineController.php'; //LINE控制
+        require_once XOOPS_ROOT_PATH . '/modules/tad_login/class/line/LineProfiles.php';      //取得用戶端 Profile
+        require_once XOOPS_ROOT_PATH . '/modules/tad_login/class/line/LineController.php';    //LINE控制
 
         if (!isset($xoopsModuleConfig['line_id'])) {
             $TadLoginModuleConfig = Utility::getXoopsModuleConfig('tad_login');
@@ -290,7 +328,7 @@ class Tools
         define("CLIENT_ID", $TadLoginModuleConfig['line_id']);
         define("CLIENT_SECRET", $TadLoginModuleConfig['line_secret']);
         define("REDIRECT_URI", XOOPS_URL . '/modules/tad_login/line_callback.php'); //登入後返回位置
-        define("SCOPE", 'openid%20profile%20email'); //授權範圍以%20分隔 可以有3項openid，profile，email
+        define("SCOPE", 'openid%20profile%20email');                                //授權範圍以%20分隔 可以有3項openid，profile，email
 
         $Line     = new \LineController();
         $loginUrl = $Line->lineLogin($state); //產生LINE登入連結
@@ -453,8 +491,7 @@ class Tools
                 }
 
                 // Utility::dd($_SESSION);
-                if (!$memberHandler->insertUser($user, true)) {
-                }
+                $memberHandler->insertUser($user, true);
 
                 // Regenrate a new session id and destroy old session
                 $GLOBALS['sess_handler']->regenerate_id(true);
@@ -464,13 +501,13 @@ class Tools
                     $redirect_url = $xoopsModuleConfig['redirect_url'];
                 } elseif ($xoopsModuleConfig['bind_openid'] == 1) {
                     $redirect_url = XOOPS_URL . '/modules/tad_login/index.php';
-                } elseif ($_SESSION['login_from']) {
+                } elseif (!empty($_SESSION['login_from']) && self::is_local_redirect($_SESSION['login_from'])) {
                     $redirect_url = $_SESSION['login_from'];
                 } else {
                     $redirect_url = XOOPS_URL . '/index.php';
                 }
 
-                if ($_SESSION['login_from']) {
+                if (!empty($_SESSION['login_from'])) {
                     unset($_SESSION['login_from']);
                 }
 
@@ -541,8 +578,8 @@ class Tools
                 $sql = 'INSERT INTO `' . $xoopsDB->prefix('groups_users_link') . '`  (groupid, uid) VALUES  (2, ' . $uid . ')';
                 $xoopsDB->queryF($sql) or Utility::web_error($sql, __FILE__, __LINE__);
 
-                $pass = self::authcode($pass, 'ENCODE', $uname);
-                $sql  = 'REPLACE INTO `' . $xoopsDB->prefix('tad_login_random_pass') . "` (`uname` , `random_pass`) VALUES ('{$uname}','{$pass}')";
+                $pass = self::encryptStoredPassword($pass);
+                $sql  = 'REPLACE INTO `' . $xoopsDB->prefix('tad_login_random_pass') . '` (`uname` , `random_pass`) VALUES (' . $xoopsDB->quote($uname) . ', ' . $xoopsDB->quote($pass) . ')';
                 $xoopsDB->queryF($sql) or Utility::web_error($sql, __FILE__, __LINE__);
 
                 self::login_xoops($uname, $name, $email, $SchoolCode, $JobName, $url, $from, $sig, $occ, $bio, $aim, $yim, $msnm);
@@ -560,13 +597,13 @@ class Tools
         }
 
         // 取得XOOPS使用者密碼（加密過的）
-        $sql    = 'SELECT `pass` FROM `' . $xoopsDB->prefix('users') . "` WHERE `uname`='{$uname}'";
+        $sql    = 'SELECT `pass` FROM `' . $xoopsDB->prefix('users') . '` WHERE `uname`=' . $xoopsDB->quote($uname);
         $result = $xoopsDB->query($sql) or Utility::web_error($sql, __FILE__, __LINE__);
 
         list($pass) = $xoopsDB->fetchRow($result);
 
         // 取得綁定密碼
-        $sql    = 'SELECT `random_pass` FROM `' . $xoopsDB->prefix('tad_login_random_pass') . "` WHERE `uname`='{$uname}'";
+        $sql    = 'SELECT `random_pass` FROM `' . $xoopsDB->prefix('tad_login_random_pass') . '` WHERE `uname`=' . $xoopsDB->quote($uname);
         $result = $xoopsDB->query($sql) or Utility::web_error($sql, __FILE__, __LINE__);
 
         list($random_pass) = $xoopsDB->fetchRow($result);
@@ -576,24 +613,143 @@ class Tools
             $random_pass = Utility::randStr(128);
             // 重新產生隨機的綁定密碼
             $pass        = md5($random_pass);
-            $random_pass = self::authcode($random_pass, 'ENCODE', $uname);
+            $random_pass = self::encryptStoredPassword($random_pass);
 
-            $sql = 'REPLACE INTO `' . $xoopsDB->prefix('tad_login_random_pass') . "` (`uname` , `random_pass`, `hashed_date`) values  ('{$uname}','{$random_pass}', '0000-00-00 00:00:00')";
+            $sql = 'REPLACE INTO `' . $xoopsDB->prefix('tad_login_random_pass') . '` (`uname` , `random_pass`, `hashed_date`) values (' . $xoopsDB->quote($uname) . ', ' . $xoopsDB->quote($random_pass) . ", '0000-00-00 00:00:00')";
             $xoopsDB->queryF($sql) or Utility::web_error($sql, __FILE__, __LINE__);
 
-            $sql = 'UPDATE `' . $xoopsDB->prefix('users') . "` SET `pass`='$pass' WHERE `uname`='{$uname}'";
+            $sql = 'UPDATE `' . $xoopsDB->prefix('users') . '` SET `pass`=' . $xoopsDB->quote($pass) . ' WHERE `uname`=' . $xoopsDB->quote($uname);
+            $xoopsDB->queryF($sql) or Utility::web_error($sql, __FILE__, __LINE__);
+        } elseif (0 === strpos($random_pass, 'v2:')) {
+            $random_pass = self::decryptStoredPassword($random_pass);
+        } else {
+            $random_pass = self::authcode($random_pass, 'DECODE', $uname);
+            if ('' === $random_pass) {
+                throw new \RuntimeException('Unable to decrypt a legacy tad_login password.');
+            }
+
+            $encryptedPass = self::encryptStoredPassword($random_pass);
+            $sql = 'UPDATE `' . $xoopsDB->prefix('tad_login_random_pass') . '` SET `random_pass`=' . $xoopsDB->quote($encryptedPass) . ' WHERE `uname`=' . $xoopsDB->quote($uname);
             $xoopsDB->queryF($sql) or Utility::web_error($sql, __FILE__, __LINE__);
         }
 
-        $random_pass = self::authcode($random_pass, 'DECODE', $uname);
-
         if ($pass !== md5($random_pass)) {
-            $sql = 'UPDATE `' . $xoopsDB->prefix('users') . "` set `pass`=MD5('{$random_pass}') WHERE `uname`='{$uname}'";
+            $sql = 'UPDATE `' . $xoopsDB->prefix('users') . '` set `pass`=MD5(' . $xoopsDB->quote($random_pass) . ') WHERE `uname`=' . $xoopsDB->quote($uname);
             $xoopsDB->queryF($sql) or Utility::web_error($sql, __FILE__, __LINE__);
 
         }
 
         return $random_pass;
+    }
+
+    public static function encryptStoredPassword(string $plain): string
+    {
+        $cipher = 'aes-256-gcm';
+        if (!function_exists('openssl_encrypt') || !function_exists('openssl_cipher_iv_length')) {
+            throw new \RuntimeException('The OpenSSL extension is required to encrypt tad_login passwords.');
+        }
+
+        $ivLength = openssl_cipher_iv_length($cipher);
+        if (false === $ivLength) {
+            throw new \RuntimeException('AES-256-GCM is not available in OpenSSL.');
+        }
+
+        $iv = random_bytes($ivLength);
+        $tag = '';
+        $encrypted = openssl_encrypt($plain, $cipher, self::getStoredPasswordKey(), OPENSSL_RAW_DATA, $iv, $tag, 'tad_login_random_pass:v2');
+        if (false === $encrypted) {
+            throw new \RuntimeException('Unable to encrypt a tad_login password.');
+        }
+
+        return 'v2:' . base64_encode($iv . $tag . $encrypted);
+    }
+
+    private static function decryptStoredPassword(string $encrypted): string
+    {
+        $cipher = 'aes-256-gcm';
+        if (!function_exists('openssl_decrypt') || !function_exists('openssl_cipher_iv_length')) {
+            throw new \RuntimeException('The OpenSSL extension is required to decrypt tad_login passwords.');
+        }
+
+        $encoded = substr($encrypted, 3);
+        $payload = base64_decode($encoded, true);
+        $ivLength = openssl_cipher_iv_length($cipher);
+        if (false === $ivLength) {
+            throw new \RuntimeException('AES-256-GCM is not available in OpenSSL.');
+        }
+
+        $tagLength = 16;
+        if (false === $payload || strlen($payload) < $ivLength + $tagLength) {
+            throw new \RuntimeException('Invalid encrypted tad_login password data.');
+        }
+
+        $iv = substr($payload, 0, $ivLength);
+        $tag = substr($payload, $ivLength, $tagLength);
+        $ciphertext = substr($payload, $ivLength + $tagLength);
+        $plain = openssl_decrypt($ciphertext, $cipher, self::getStoredPasswordKey(), OPENSSL_RAW_DATA, $iv, $tag, 'tad_login_random_pass:v2');
+        if (false === $plain) {
+            throw new \RuntimeException('Unable to decrypt a tad_login password. Check the XOOPS private-data key file.');
+        }
+
+        return $plain;
+    }
+
+    private static function getStoredPasswordKey(): string
+    {
+        if (!defined('XOOPS_VAR_PATH')) {
+            throw new \RuntimeException('XOOPS_VAR_PATH is required to store the tad_login encryption key.');
+        }
+
+        $directory = XOOPS_VAR_PATH . '/tad_login';
+        if (!is_dir($directory) && !@mkdir($directory, 0700, true) && !is_dir($directory)) {
+            throw new \RuntimeException('Unable to create the tad_login private-data directory.');
+        }
+
+        $keyPath = $directory . '/random_pass.key';
+        $lock = @fopen($keyPath . '.lock', 'c+b');
+        if (false === $lock) {
+            throw new \RuntimeException('Unable to open the tad_login encryption key lock.');
+        }
+        if (!flock($lock, LOCK_EX)) {
+            fclose($lock);
+            throw new \RuntimeException('Unable to lock the tad_login encryption key file.');
+        }
+
+        try {
+            if (is_link($keyPath)) {
+                throw new \RuntimeException('The tad_login encryption key file must not be a symbolic link.');
+            }
+
+            if (!file_exists($keyPath)) {
+                $key = random_bytes(32);
+                $handle = @fopen($keyPath, 'x+b');
+                if (false === $handle) {
+                    throw new \RuntimeException('Unable to create the tad_login encryption key file.');
+                }
+
+                $written = fwrite($handle, $key);
+                $flushed = fflush($handle);
+                fclose($handle);
+                @chmod($keyPath, 0600);
+
+                if (32 !== $written || !$flushed) {
+                    @unlink($keyPath);
+                    throw new \RuntimeException('Unable to write the tad_login encryption key file.');
+                }
+
+                return $key;
+            }
+
+            $key = @file_get_contents($keyPath);
+            if (false === $key || 32 !== strlen($key)) {
+                throw new \RuntimeException('Invalid or unreadable tad_login encryption key file.');
+            }
+
+            return $key;
+        } finally {
+            flock($lock, LOCK_UN);
+            fclose($lock);
+        }
     }
 
     //非常給力的authcode加密函式,Discuz!經典程式碼(帶詳解)
@@ -623,7 +779,7 @@ class Tools
         $string_length = strlen($string);
         $result        = '';
         $box           = range(0, 255);
-        $rndkey        = array();
+        $rndkey        = [];
         // 產生密匙簿
         for ($i = 0; $i <= 255; $i++) {
             $rndkey[$i] = ord($cryptkey[$i % $key_length]);

@@ -22,9 +22,15 @@ $newpass = Request::getString('newpass');
 
 $oidc_array = array_keys(Tools::$all_oidc);
 
-if (isset($link_to) and !empty($link_to)) {
-    $_SESSION['login_from'] = $link_to;
-} elseif (!isset($_SESSION['login_from'])) {
+if (isset($_SESSION['login_from']) && !Tools::is_local_redirect($_SESSION['login_from'])) {
+    unset($_SESSION['login_from']);
+}
+if (!empty($link_to)) {
+    if (Tools::is_local_redirect($link_to)) {
+        $_SESSION['login_from'] = $link_to;
+    }
+} elseif (!isset($_SESSION['login_from']) && !empty($_SERVER['HTTP_REFERER'])
+    && Tools::is_local_redirect($_SERVER['HTTP_REFERER'])) {
     $_SESSION['login_from'] = $_SERVER['HTTP_REFERER'];
 }
 
@@ -144,6 +150,7 @@ switch ($op) {
             if (in_array($op, $oidc_array)) {
                 $_SESSION['auth_method'] = $op;
                 Tools::edu_login($op);
+                exit;
             } else {
                 list_login();
                 $op = 'list_login';
@@ -154,6 +161,7 @@ switch ($op) {
 
 $xoopsTpl->assign('toolbar', Utility::toolbar_bootstrap($interface_menu, false, $interface_icon));
 $xoopsTpl->assign('now_op', $op);
+$xoopsTpl->assign('xoops_pagetitle', _MD_TADLOGIN_LOGIN_LIST);
 require_once XOOPS_ROOT_PATH . '/footer.php';
 
 /*-----------function區--------------*/
@@ -174,11 +182,21 @@ function tainan_login()
         # Change 'localhost' to your domain name.
         $openid = new LightOpenID(XOOPS_URL);
         if (!$openid->mode) {
-            $openid->identity = 'https://openid.tn.edu.tw/op/';
+            $openid->identity = "https://openid.tn.edu.tw/op/";
             $openid->required = ['contact/email', 'namePerson'];
             $openid->optional = ['/axschema/school/id', '/axschema/school/titleStr', 'tw/person/titles'];
-            header('Location: ' . $openid->authUrl());
+            $openid_url       = $openid->authUrl();
+            // die($openid_url);
+            header('Location: ' . $openid_url);
         } else {
+            // Never trust attributes until the OP has verified the signed response.
+            // validate() checks return_to and asks the discovered OP to verify the
+            // signed response, rejecting forged assoc_handle and signature values.
+            if (!$openid->validate()) {
+                redirect_header(XOOPS_URL, 5, 'OpenID 驗證失敗，請重新登入。');
+                exit;
+            }
+
             $user_profile = $openid->getAttributes();
             // Utility::dd($user_profile);
             /*
@@ -1138,8 +1156,15 @@ function tp_ldap_login()
 
     if (empty($oidc_setup['tp_ldap']['clientid'])) {
         redirect_header(XOOPS_URL, 3, "系統無法取得臺北市單一簽入 client id 值");
+        exit;
     }
-    header("location:https://ldap.tp.edu.tw/oauth/authorize?client_id={$oidc_setup['tp_ldap']['clientid']}&redirect_uri=" . XOOPS_URL . '/modules/tad_login/tp_callback.php&response_type=code&scope=user profile');
+    $authorize_url = 'https://ldap.tp.edu.tw/oauth/authorize?' . http_build_query([
+        'client_id'     => $oidc_setup['tp_ldap']['clientid'],
+        'redirect_uri'  => XOOPS_URL . '/modules/tad_login/tp_callback.php',
+        'response_type' => 'code',
+        'scope'         => 'user profile',
+    ], '', '&', PHP_QUERY_RFC3986);
+    header('location:' . $authorize_url);
     exit;
 }
 
